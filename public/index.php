@@ -19,8 +19,7 @@ use Router\{ Router, RouteContainer };
 use Router\Http\{ Request, RequestCreator };
 use Middlewares\Token\TokenAssert;
 
-$token = TokenAssert::class;
-var_dump($token);
+TokenAssert::class;
 
 $route = new Router(new RouteContainer(), RequestCreator::create());
 
