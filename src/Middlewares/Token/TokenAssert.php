@@ -5,10 +5,10 @@
 namespace Middlewares\Token;
 
 use \PlugRoute\Http\Request;
-use \PlugRoute\Middleware\RouterMiddleware;
+use \PlugRoute\Middleware\PlugRouteMiddleware;
 use Services\Auth\JWT\Decode as JWT;
 
-class TokenAssert extends RouterMiddleware
+class TokenAssert extends PlugRouteMiddleware
 {
     public function handle(Request $request)
 	{

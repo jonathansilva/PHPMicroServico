@@ -5,9 +5,9 @@
 namespace Middlewares\Token;
 
 use \PlugRoute\Http\Request;
-use \PlugRoute\Middleware\RouterMiddleware;
+use \PlugRoute\Middleware\PlugRouteMiddleware;
 
-class EnsureAuth extends RouterMiddleware
+class EnsureAuth extends PlugRouteMiddleware
 {
     public function handle(Request $request)
     {
