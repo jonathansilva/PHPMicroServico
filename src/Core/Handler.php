@@ -5,7 +5,7 @@
 namespace Core;
 
 use Services\Database;
-use Router\Http\Request;
+use \PlugRoute\Http\Request;
 use Core\Error;
 
 class Handler

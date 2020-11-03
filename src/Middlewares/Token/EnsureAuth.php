@@ -4,8 +4,8 @@
 
 namespace Middlewares\Token;
 
-use Router\Http\Request;
-use Router\Middleware\RouterMiddleware;
+use \PlugRoute\Http\Request;
+use \PlugRoute\Middleware\RouterMiddleware;
 
 class EnsureAuth extends RouterMiddleware
 {
