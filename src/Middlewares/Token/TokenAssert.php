@@ -16,6 +16,7 @@ class TokenAssert extends RouterMiddleware
 
         try {
             $tokenData = $token ? JWT::decode($token) : '';
+            var_dump($tokenData);
 
             $request->addQuery('tokenData', $tokenData);
 

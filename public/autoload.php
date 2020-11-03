@@ -1,6 +1,6 @@
 <?php
 
-function autoload($class) {
+/*function autoload($class) {
     if (!defined('PHP_WINDOWS_VERSION_MAJOR')) {
         $class = str_replace("\\", "/", $class);
     }
@@ -26,4 +26,4 @@ function autoload($class) {
     }
 }
 
-spl_autoload_register('autoload');
+spl_autoload_register('autoload');*/

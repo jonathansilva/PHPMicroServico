@@ -12,16 +12,16 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, x-access-token");
 
-// Autoload
-require_once('autoload.php');
+//require_once('autoload.php');
+require __DIR__.'/../vendor/autoload.php';
 
-use Router\{ Router, RouteContainer };
-use Router\Http\{ Request, RequestCreator };
+use \PlugRoute\{ PlugRoute, RouteContainer };
+use \PlugRoute\Http\{ Request, RequestCreator };
 use Middlewares\Token\TokenAssert;
 
 TokenAssert::class;
 
-$route = new Router(new RouteContainer(), RequestCreator::create());
+$route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
 $route->notFound(function() {
 	echo 'Error Page';

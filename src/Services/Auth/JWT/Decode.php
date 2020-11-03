@@ -4,10 +4,16 @@
 
 namespace Services\Auth\JWT;
 
+use \Firebase\JWT\JWT;
+
 class Decode
 {
-    public function decode()
+    public function decode(string $token)
     {
-        // TODO
+        $key = "teste123";
+
+        $decoded = JWT::decode($token, $key, array('HS256'));
+
+        return $decoded;
     }
 }
