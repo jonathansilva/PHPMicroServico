@@ -4,10 +4,19 @@
 
 namespace Middlewares\Token;
 
-class EnsureAuth
+use Router\Http\Request;
+use Router\Middleware\RouterMiddleware;
+
+class EnsureAuth extends RouterMiddleware
 {
-    public function __construct()
-	{
-        // TODO
-	}
+    public function handle(Request $request)
+    {
+        $token = $request->header('Authorization');
+
+        if (!$token) {
+            throw new \Exception('Access denied');
+        }
+
+        //$next();
+    }
 }

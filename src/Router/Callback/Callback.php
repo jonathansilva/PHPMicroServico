@@ -41,7 +41,7 @@ class Callback
         foreach ($middlewares as $middleware) {
             $obj = new $middleware();
 
-            if (!($obj instanceof PlugRouteMiddleware)) {
+            if (!($obj instanceof RouterMiddleware)) {
                 $message = "Error: the class {$middleware} must implement RouterMiddleware.";
 
                 return Error::throwException($message);

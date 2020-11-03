@@ -10,24 +10,30 @@
 // CORS
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, x-access-token");
 
 // Autoload
 require_once('autoload.php');
 
 use Router\{ Router, RouteContainer };
 use Router\Http\{ Request, RequestCreator };
+use Middlewares\Token\TokenAssert;
+
+$token = TokenAssert::class;
+var_dump($token);
 
 $route = new Router(new RouteContainer(), RequestCreator::create());
 
-// A ideia é carregar todas as rotas ( cada rota, é um arquivo )
-// https://github.com/jonathansilva/API/blob/master/src/core/server/index.js#L6
+$route->notFound(function() {
+	echo 'Error Page';
+});
 
+$route->get('/', function() {
+    echo 'Hello World';
+});
 
-// https://github.com/erandirjunior/plug-http/blob/master/doc/request.md
-$route->get('/{id:?}', function(Request $req) {
-    var_dump($req->bodyObject());
-    //var_dump($res);
+$route->get('/user/{id:?}', function(Request $request) {
+    var_dump($request->parameters());
 });
 
 $route->on();

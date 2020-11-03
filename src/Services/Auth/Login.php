@@ -6,11 +6,6 @@ use Services\Auth\JWT\Encode as JWT;
 
 class Login
 {
-    public function __construct()
-	{
-        // TODO
-    }
-
     public function verifyEmail($db, $email)
     {
         // TODO

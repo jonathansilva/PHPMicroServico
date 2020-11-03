@@ -5,6 +5,7 @@
 namespace Routes\Auth;
 
 use Services\Auth\Login as Auth;
+use Core\Validator\Schema;
 
 class Login
 {

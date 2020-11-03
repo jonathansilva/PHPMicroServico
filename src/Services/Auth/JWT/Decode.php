@@ -6,11 +6,6 @@ namespace Services\Auth\JWT;
 
 class Decode
 {
-    public function __construct()
-	{
-        // TODO
-    }
-
     public function decode()
     {
         // TODO

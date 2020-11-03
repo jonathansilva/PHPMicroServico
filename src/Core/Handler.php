@@ -25,7 +25,7 @@ class Handler
         return $req->only('tokenData');
     }
 
-    public function makeHandler( $handler /* me perdi */, $options = [] )
+    public function makeHandler( $handler, $options = [] )
     {
         try {
             $payload = $this->parsePayload($req);
@@ -41,7 +41,7 @@ class Handler
             $authInfo = $this->parseToken($req);
 
             // me perdi
-            [$status, $data] = handler($payload, $services, $authInfo);
+            [$status, $data] = $handler($payload, $services, $authInfo);
 
             return json_encode($status, $data);
         } catch (\Exception $e) {

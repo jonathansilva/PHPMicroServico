@@ -6,11 +6,6 @@ namespace Services\Auth\JWT;
 
 class Encode
 {
-    public function __construct()
-	{
-        // TODO
-    }
-
     public function encode()
     {
         // TODO

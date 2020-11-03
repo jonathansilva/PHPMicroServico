@@ -4,12 +4,24 @@
 
 namespace Middlewares\Token;
 
+use Router\Http\Request;
+use Router\Middleware\RouterMiddleware;
 use Services\Auth\JWT\Decode as JWT;
 
-class TokenAssert
+class TokenAssert extends RouterMiddleware
 {
-    public function __construct()
+    public function handle(Request $request)
 	{
-        // TODO
+        $token = $request->header('Authorization');
+
+        try {
+            $tokenData = $token ? JWT::decode($token) : '';
+
+            $request->addQuery('tokenData', $tokenData);
+
+            // $next()
+        } catch (\Exception $e) {
+            throw new \Exception('Invalid authentication');
+        }
 	}
 }
