@@ -5,17 +5,14 @@ function autoload($class) {
         $class = str_replace("\\", "/", $class);
     }
 
-    // list comma separated directory name
-    $directory = array('../src/');
+    $dir = array('../src/');
+    $extension = array('%s.php');
 
-    // list of comma separated file format
-    $fileFormat = array('%s.php');
-
-    foreach ($directory as $current_dir)
+    foreach ($dir as $current_dir)
     {
-        foreach ($fileFormat as $current_format)
+        foreach ($extension as $current_extension)
         {
-            $path = $current_dir.sprintf($current_format, $class);
+            $path = $current_dir.sprintf($current_extension, $class);
 
             if (!file_exists($path)) {
                 die('Error: '.$path.' not found');
