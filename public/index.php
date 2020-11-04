@@ -34,4 +34,8 @@ $route->get('/user/{id:?}', function(Request $request) {
     var_dump($request->parameters());
 });
 
+$route->post('/user', function(Request $request) {
+    var_dump($request->bodyObject());
+});
+
 $route->on();

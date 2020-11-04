@@ -16,7 +16,7 @@ class Login
         // TODO
     }
 
-    public function authenticate($db, $data = array())
+    public function authenticate($db, array $data)
     {
         $email = $data['email'];
         $password = $data['password'];
