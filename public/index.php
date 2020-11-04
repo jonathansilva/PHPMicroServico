@@ -7,13 +7,11 @@
  * kill -9 PID
 */
 
-// CORS
+require __DIR__.'/../vendor/autoload.php';
+
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, x-access-token");
-
-//require_once('autoload.php');
-require __DIR__.'/../vendor/autoload.php';
 
 use \PlugRoute\{ PlugRoute, RouteContainer };
 use \PlugRoute\Http\{ Request, RequestCreator };
