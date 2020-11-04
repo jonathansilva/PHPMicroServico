@@ -17,7 +17,7 @@ use \PlugRoute\{ PlugRoute, RouteContainer };
 use \PlugRoute\Http\{ Request, RequestCreator };
 use Middlewares\Token\TokenAssert;
 
-TokenAssert::handler();
+//TokenAssert::handler();
 
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
