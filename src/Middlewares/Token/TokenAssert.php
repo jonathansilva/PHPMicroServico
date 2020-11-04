@@ -16,7 +16,6 @@ class TokenAssert implements PlugRouteMiddleware
 
         try {
             $tokenData = $token ? JWT::decode($token) : '';
-            var_dump($tokenData);
 
             $request->addQuery('tokenData', $tokenData);
 

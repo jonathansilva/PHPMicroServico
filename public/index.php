@@ -17,7 +17,6 @@ use \PlugRoute\{ PlugRoute, RouteContainer };
 use \PlugRoute\Http\{ Request, RequestCreator };
 use Middlewares\Token\TokenAssert;
 
-//TokenAssert::class;
 TokenAssert::handler();
 
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
@@ -36,6 +35,11 @@ $route->get('/user/{id:?}', function(Request $request) {
 
 $route->post('/user', function(Request $request) {
     var_dump($request->bodyObject());
+});
+
+$route->put('/user/{id:?}', function(Request $request) {
+    $data = [$request->parameters(), $request->bodyObject()];
+    var_dump($data);
 });
 
 $route->on();
