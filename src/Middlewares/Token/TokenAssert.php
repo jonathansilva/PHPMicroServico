@@ -8,15 +8,9 @@ use \PlugRoute\Http\Request;
 use \PlugRoute\Middleware\PlugRouteMiddleware;
 use Services\Auth\JWT\Decode as JWT;
 
-class TokenAssert extends PlugRouteMiddleware
+class TokenAssert implements PlugRouteMiddleware
 {
-
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
-
-    public static function handle()
+    public function handler(Request $request)
 	{
         $token = $request->header('Authorization');
 
