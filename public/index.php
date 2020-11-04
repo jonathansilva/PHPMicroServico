@@ -17,9 +17,11 @@ require __DIR__.'/../vendor/autoload.php';
 
 use \PlugRoute\{ PlugRoute, RouteContainer };
 use \PlugRoute\Http\{ Request, RequestCreator };
-use Middlewares\Token\TokenAssert;
+//use Middlewares\Token\TokenAssert;
 
-TokenAssert::class;
+require_once __DIR__.'/../src/Middlewares/Token/TokenAssert.php';
+
+TokenAssert::handle();
 
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
