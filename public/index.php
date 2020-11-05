@@ -19,7 +19,8 @@ use \PlugRoute\Http\{ Request, RequestCreator };
 
 require __DIR__.'/../src/Middlewares/Token/TokenAssert.php';
 
-TokenAssert::class;
+//$teste = new TokenAssert();
+//TokenAssert::class();
 
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
