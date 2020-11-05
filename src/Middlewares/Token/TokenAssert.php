@@ -18,8 +18,6 @@ class TokenAssert implements PlugRouteMiddleware
             $tokenData = $token ? JWT::decode($token) : '';
 
             $request->addQuery('tokenData', $tokenData);
-
-            // $next()
         } catch (\Exception $e) {
             throw new \Exception('Invalid authentication');
         }
