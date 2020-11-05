@@ -1,15 +1,18 @@
 {
-    "name": "PHPMS",
-    "description": "Micro Serviço",
+    "name": "jonathansilva/PHPMicroServico",
+    "description": "API RESTful como micro serviço",
     "license": "MIT",
+
     "config": {
         "vendor-dir": "vendor"
     },
+
     "autoload": {
         "psr-4": {
             "Source\\": "src/"
         }
     },
+
     "require": {
         "firebase/php-jwt": "^5.2",
         "erandir/plug-route": "^4.0"

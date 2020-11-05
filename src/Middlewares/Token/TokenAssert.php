@@ -10,11 +10,6 @@ use Services\Auth\JWT\Decode as JWT;
 
 class TokenAssert implements PlugRouteMiddleware
 {
-    public function __construct()
-    {
-        //
-    }
-
     public function handler(Request $request)
 	{
         $token = $request->header('Authorization');
