@@ -15,12 +15,10 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 use \PlugRoute\{ PlugRoute, RouteContainer };
 use \PlugRoute\Http\{ Request, RequestCreator };
-//use Middlewares\Token\TokenAssert;
+use Middlewares\Token\TokenAssert;
 
-require __DIR__.'/../src/Middlewares/Token/TokenAssert.php';
-
-//$teste = new TokenAssert();
-//$teste = new TokenAssert(new Request());
+$token = new TokenAssert;
+$token->handler(new Request());
 
 $route = new PlugRoute(new RouteContainer(), RequestCreator::create());
 
