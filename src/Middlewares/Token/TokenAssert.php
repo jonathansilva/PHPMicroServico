@@ -2,11 +2,11 @@
 
 // Seguir este raciocínio https://github.com/jonathansilva/API/blob/master/src/middlewares/token/token-assert.js
 
-namespace Middlewares\Token;
+namespace Source\Middlewares\Token;
 
 use \PlugRoute\Http\Request;
 use \PlugRoute\Middleware\PlugRouteMiddleware;
-use Services\Auth\JWT\Decode as JWT;
+use Source\Services\Auth\JWT\Decode as JWT;
 
 class TokenAssert implements PlugRouteMiddleware
 {

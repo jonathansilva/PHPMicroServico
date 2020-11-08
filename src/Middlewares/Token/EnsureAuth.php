@@ -16,7 +16,5 @@ class EnsureAuth implements PlugRouteMiddleware
         if (!$token) {
             throw new \Exception('Access denied');
         }
-
-        //$next();
     }
 }
